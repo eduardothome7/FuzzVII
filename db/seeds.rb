@@ -25,6 +25,8 @@ Icon.create(title: 'trending_up', name: 'trend')
 Icon.create(title: 'star_border', name: 'star')
 
 
-
+Mod.create('title': 'Funcionários', category_mod_id: 3, icon_id: 2, slug: 'employees')
+Mod.create('title': 'Funcionamento', category_mod_id: 3, icon_id: 1,  slug: 'studio/:studio_id/info')
+Mod.create('title': 'Gastos', category_mod_id: 3, icon_id: 1,  slug: '')
 
 
