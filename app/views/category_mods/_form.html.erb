@@ -1,0 +1,32 @@
+<%= form_with(model: category_mod, local: true) do |form| %>
+  <% if category_mod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(category_mod.errors.count, "error") %> prohibited this category_mod from being saved:</h2>
+
+      <ul>
+      <% category_mod.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "título" %>
+    <%= form.text_field :title, id: :category_mod_title, class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label "nome" %>
+    <%= form.text_field :name, id: :category_mod_name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Ícone" %><br>
+    <%= form.select :icon_id, Icon.all.collect { |icon| [icon.name, icon.id] }, class: 'form-control', prompt: 'Selecione o ícone de exibição' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

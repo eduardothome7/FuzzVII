@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category_mod.title %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category_mod.name %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @category_mod.icon_id %>
+</p>
+
+<%= link_to 'Edit', edit_category_mod_path(@category_mod) %> |
+<%= link_to 'Back', category_mods_path %>

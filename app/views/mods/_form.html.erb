@@ -1,0 +1,47 @@
+<%= form_with(model: mod, local: true) do |form| %>
+  <% if mod.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mod.errors.count, "error") %> prohibited this mod from being saved:</h2>
+
+      <ul>
+      <% mod.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= form.label "título" %>
+    <%= form.text_field :title, id: :mod_title, class: 'form-control', placeholder: 'Título', required: true %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label "nome" %>
+    <%= form.text_field :name, id: :mod_name, class: 'form-control', placeholder: '(exibido no menu)' %>
+  </div>
+ 
+  <div class="form-group">
+    <%= form.label "Descrição" %>
+    <%= form.text_area :description, id: :mod_description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Ícone" %><br>
+    <%= form.select :icon_id, Icon.all.collect { |icon| [icon.name, icon.id] }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "url" %>
+    <%= form.text_field :slug, id: :mod_slug, class: 'form-control', placeholder: '/moduleNome' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Categoria" %><br>
+    <%= form.select :category_mod_id, CategoryMod.all.collect { |category_mod| [category_mod.title, category_mod.id] }, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Salvar", class: 'btn btn-primary' %>
+  </div>
+<% end %>

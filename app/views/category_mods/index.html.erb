@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Category Mods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Name</th>
+      <th>Icon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @category_mods.each do |category_mod| %>
+      <tr>
+        <td><%= category_mod.title %></td>
+        <td><%= category_mod.name %></td>
+        <td><%= category_mod.icon_id %></td>
+        <td><%= link_to 'Show', category_mod %></td>
+        <td><%= link_to 'Edit', edit_category_mod_path(category_mod) %></td>
+        <td><%= link_to 'Destroy', category_mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category Mod', new_category_mod_path %>
