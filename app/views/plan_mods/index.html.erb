@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plan Mods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plan</th>
+      <th>Mod</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plan_mods.each do |plan_mod| %>
+      <tr>
+        <td><%= plan_mod.plan_id %></td>
+        <td><%= plan_mod.mod_id %></td>
+        <td><%= link_to 'Show', plan_mod %></td>
+        <td><%= link_to 'Edit', edit_plan_mod_path(plan_mod) %></td>
+        <td><%= link_to 'Destroy', plan_mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plan Mod', new_plan_mod_path %>

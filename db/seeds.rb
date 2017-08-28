@@ -29,4 +29,9 @@ Mod.create('title': 'Funcionários', category_mod_id: 3, icon_id: 2, slug: 'empl
 Mod.create('title': 'Funcionamento', category_mod_id: 3, icon_id: 1,  slug: 'studio/:studio_id/info')
 Mod.create('title': 'Gastos', category_mod_id: 3, icon_id: 1,  slug: '')
 
+@plan1 = Plan.create('name':'Músico', 'description':'Agende em seus estúdios favoritos. Marque seus favoritos, e forneça <em>feedback</em> através de avaliações e comentários! Pague 
+	seus ensaios e gravações online de forma simples e rápida!', 'price': 300.0)
+@plan2 = Plan.create('name':'Proprietário', 'description':'Disponibilize a agenda de seu estúdio para usuários agendarem em suas salas! 
+	Disponibilize equipamentos para locação e controle o fluxo através do calendário!', 'price': 800.0)
+@plan3 = Plan.create('name':'Empresário', 'description': 'Administre até 3 estúdios! Registro e liberação de funções para funcionários. Controle de gastos do estúdio e financeiro.', 'price': 1000.0)
 

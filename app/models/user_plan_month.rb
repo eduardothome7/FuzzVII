@@ -1,0 +1,2 @@
+class UserPlanMonth < ApplicationRecord
+end

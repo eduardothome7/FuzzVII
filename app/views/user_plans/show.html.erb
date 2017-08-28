@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user_plan.user_id %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @user_plan.plan_id %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @user_plan.payment_type %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @user_plan.value %>
+</p>
+
+<p>
+  <strong>Duration months:</strong>
+  <%= @user_plan.duration_months %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @user_plan.status %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @user_plan.created_at %>
+</p>
+
+<p>
+  <strong>Cancelled at:</strong>
+  <%= @user_plan.cancelled_at %>
+</p>
+
+<%= link_to 'Edit', edit_user_plan_path(@user_plan) %> |
+<%= link_to 'Back', user_plans_path %>

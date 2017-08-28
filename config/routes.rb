@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :user_plan_months
+  resources :user_plans
+  resources :plan_mods
+  resources :plans
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   resources :category_mods
   resources :icons
   resources :mods

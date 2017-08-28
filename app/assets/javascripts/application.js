@@ -13,11 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require bootstrap-sprockets
+//= require materialize
 //= require moment
 //= require_tree .
 
 
 $(document).ready(function(){
+   	$(".button-collapse").sideNav();
+   	$('.button-collapse').sideNav('hide');
 
 });

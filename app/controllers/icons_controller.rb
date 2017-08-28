@@ -1,6 +1,6 @@
 class IconsController < ApplicationController
   before_action :set_icon, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /icons
   # GET /icons.json
   def index

@@ -1,0 +1,57 @@
+<%= form_with(model: user_plan, local: true) do |form| %>
+  <% if user_plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_plan.errors.count, "error") %> prohibited this user_plan from being saved:</h2>
+
+      <ul>
+      <% user_plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :user_plan_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plan_id %>
+    <%= form.number_field :plan_id, id: :user_plan_plan_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_type %>
+    <%= form.text_field :payment_type, id: :user_plan_payment_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value, id: :user_plan_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration_months %>
+    <%= form.number_field :duration_months, id: :user_plan_duration_months %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :user_plan_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.datetime_select :created_at, id: :user_plan_created_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cancelled_at %>
+    <%= form.datetime_select :cancelled_at, id: :user_plan_cancelled_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

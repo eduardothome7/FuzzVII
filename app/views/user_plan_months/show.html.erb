@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User plan:</strong>
+  <%= @user_plan_month.user_plan_id %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @user_plan_month.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @user_plan_month.year %>
+</p>
+
+<p>
+  <strong>Until month day:</strong>
+  <%= @user_plan_month.until_month_day %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @user_plan_month.status %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @user_plan_month.value %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @user_plan_month.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_user_plan_month_path(@user_plan_month) %> |
+<%= link_to 'Back', user_plan_months_path %>

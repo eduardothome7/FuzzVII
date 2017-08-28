@@ -1,0 +1,52 @@
+<%= form_with(model: user_plan_month, local: true) do |form| %>
+  <% if user_plan_month.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_plan_month.errors.count, "error") %> prohibited this user_plan_month from being saved:</h2>
+
+      <ul>
+      <% user_plan_month.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_plan_id %>
+    <%= form.number_field :user_plan_id, id: :user_plan_month_user_plan_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.number_field :month, id: :user_plan_month_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :user_plan_month_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :until_month_day %>
+    <%= form.number_field :until_month_day, id: :user_plan_month_until_month_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :user_plan_month_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value, id: :user_plan_month_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :created_at %>
+    <%= form.number_field :created_at, id: :user_plan_month_created_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

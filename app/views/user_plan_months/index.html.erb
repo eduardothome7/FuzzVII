@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Plan Months</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User plan</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Until month day</th>
+      <th>Status</th>
+      <th>Value</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_plan_months.each do |user_plan_month| %>
+      <tr>
+        <td><%= user_plan_month.user_plan_id %></td>
+        <td><%= user_plan_month.month %></td>
+        <td><%= user_plan_month.year %></td>
+        <td><%= user_plan_month.until_month_day %></td>
+        <td><%= user_plan_month.status %></td>
+        <td><%= user_plan_month.value %></td>
+        <td><%= user_plan_month.created_at %></td>
+        <td><%= link_to 'Show', user_plan_month %></td>
+        <td><%= link_to 'Edit', edit_user_plan_month_path(user_plan_month) %></td>
+        <td><%= link_to 'Destroy', user_plan_month, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Plan Month', new_user_plan_month_path %>

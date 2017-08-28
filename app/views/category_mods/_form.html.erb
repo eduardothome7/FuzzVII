@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <%= form.label "Ícone" %><br>
-    <%= form.select :icon_id, Icon.all.collect { |icon| [icon.name, icon.id] }, class: 'form-control', prompt: 'Selecione o ícone de exibição' %>
+    <%= form.select :icon_id, Icon.all.collect { |icon| [icon.name, icon.id] }, id: 'select_icon_new_category_mod', class: 'form-control', include_blank: 'Selecione o ícone de exibição' %>
   </div>
 
   <div class="actions">

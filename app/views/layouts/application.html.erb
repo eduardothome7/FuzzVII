@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>FuzzV2</title>
     <%= csrf_meta_tags %>
 
@@ -9,64 +11,40 @@
     <%= javascript_include_tag :modernizr %>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-
-	<!-- (Optional) Latest compiled and minified JavaScript translation files -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
 
   </head>
 
   <body>
-  	<header class="cd-main-header">
-		<a href="#0" class="cd-logo"><img src="img/cd-logo.svg" alt="Logo"></a>
-		
-		<div class="cd-search is-hidden">
-			<form action="#!">
-				<input type="search" placeholder="Pesquisar...">
-			</form>
-		</div> <!-- cd-search -->
-
-		<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+ 
+	<nav>
+      <div class="nav-wrapper magenta">
+        <a href="#" id="btn_sidebar" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#!" class="brand-logo">Logo</a>
+      	<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      	<ul class="right hide-on-med-and-down">
+	        <li><a href="sass.html">Sass</a></li>
+	        <li><a href="badges.html">Components</a></li>
+	        <li><a href="collapsible.html">Javascript</a></li>
+	        <li><a href="mobile.html">Mobile</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="sass.html">Sass</a></li>
+	        <li><a href="badges.html">Components</a></li>
+	        <li><a href="collapsible.html">Javascript</a></li>
+	        <li><a href="mobile.html">Mobile</a></li>
+	      </ul>
+      </div>
+  	</nav>
 	
-		<nav class="cd-nav">
-			<ul class="cd-top-nav">		
-				<!-- <a href="#0">
-					<i class="material-icons">notifications_active</i>						
-				</a> -->
-				<li class="has-children account">
-					<a href="#0">
-						<img src="img/cd-avatar.png" alt="avatar">
-						Eduardo Thomé
-					</a>
+    <div class="container">
+        <!-- Page Content goes here -->
+        <%= render 'layouts/sidebar' %>
+        <%= yield %>
+    </div>
 
-					<ul>
-						<li><a href="#0">My Account</a></li>
-						<li><a href="#0">Edit Account</a></li>
-						<li><a href="#0">Logout</a></li>
-					</ul>
-				</li>
-			</ul>
-		</nav>
-	</header> <!-- .cd-main-header -->
-
-	<main class="cd-main-content">
-		<%= render 'layouts/sidebar' %>
-
-		<div class="content-wrapper">
-
-			<%= yield %>
-		
-		</div> <!-- .content-wrapper -->
-	</main> <!-- .cd-main-content -->
-</body>
-    
-  </body>
 </html>
 
 

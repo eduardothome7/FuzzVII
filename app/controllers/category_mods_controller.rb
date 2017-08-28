@@ -1,6 +1,6 @@
 class CategoryModsController < ApplicationController
   before_action :set_category_mod, only: [:show, :edit, :update, :destroy]
-
+  # before_action :authenticate_user!
   # GET /category_mods
   # GET /category_mods.json
   def index

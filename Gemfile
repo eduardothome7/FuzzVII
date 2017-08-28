@@ -20,6 +20,7 @@ gem 'momentjs-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'devise'
+gem 'materialize-sass'
 gem 'modernizr-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

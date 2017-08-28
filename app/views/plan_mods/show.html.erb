@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @plan_mod.plan_id %>
+</p>
+
+<p>
+  <strong>Mod:</strong>
+  <%= @plan_mod.mod_id %>
+</p>
+
+<%= link_to 'Edit', edit_plan_mod_path(@plan_mod) %> |
+<%= link_to 'Back', plan_mods_path %>
