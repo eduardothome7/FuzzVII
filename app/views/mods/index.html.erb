@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Módulos do Sistema</h3>
+<h4>Módulos do Sistema</h4>
 
-<ul class="list_collection">
+<%= link_to 'Novo Módulo', new_mod_path, class: 'waves-effect waves-light btn light-blue' %>
+
+<section class="list-itens">
   <% @mods.each do |mod| %>
-    <li>
-      <%= mod.name %></td>
-      <%= mod.icon_id %></td>
-              <td><%= link_to 'Show', mod %></td>
-        <td><%= link_to 'Edit', edit_mod_path(mod) %></td>
-        <td><%= link_to 'Destroy', mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </li>
+    <div class="row item">
+      <div class="col m1 s3"><div class="thumb"><i class="material-icons"><%= mod.icon.name %></i></div></div>
+      <div class="col m10 s6 content"><%= mod.title %></div>
+      <div class="col m1 s2 action">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-button btn grey lighten-5' href='#' data-activates='dropdown<%= mod.id %>'><i class="material-icons">more_vert</i></a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown<%= mod.id %>' class='dropdown-content'>
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+
+      </div>     
+    </div>
   <% end %>
-</ul>
+</section>
 
 <br>
-
-<%= link_to 'New Mod', new_mod_path %>
