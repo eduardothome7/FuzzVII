@@ -1,17 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h4>Módulos do Sistema</h4>
-
-<%= link_to 'Novo Módulo', new_mod_path, class: 'waves-effect waves-light btn light-blue' %>
+<a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">Novo Módulo</a>
 
 <section class="list-itens">
   <% @mods.each do |mod| %>
     <div class="row item">
-      <div class="col m1 s3"><div class="thumb"><i class="material-icons"><%= mod.icon.name %></i></div></div>
-      <div class="col m10 s6 content"><%= mod.title %></div>
-      <div class="col m1 s2 action">
+      <div class="col m1 s2"><div class="thumb"><i class="material-icons"><%= mod.icon.name %></i></div></div>
+      <div class="col m10 s9 content"><%= mod.title %></div>
+      <div class="col m1 s1 action">
         <!-- Dropdown Trigger -->
-        <a class='dropdown-button btn grey lighten-5' href='#' data-activates='dropdown<%= mod.id %>'><i class="material-icons">more_vert</i></a>
+        <a class='dropdown-button' href='#' data-activates='dropdown<%= mod.id %>'><i class="material-icons">more_vert</i></a>
 
         <!-- Dropdown Structure -->
         <ul id='dropdown<%= mod.id %>' class='dropdown-content'>
@@ -28,4 +26,17 @@
   <% end %>
 </section>
 
-<br>
+<!-- Modal Structure -->
+  <div id="modal1" class="modal modalVertical">
+    <div class="modal-header blue-grey">
+      <a href="#!" class="waves-effect waves-light save_form"><i class="material-icons">navigate_before</i></a>Cadastrar módulo
+    </div>
+    <div class="modal-content">
+      <%= render 'form', mod: @mod %>
+    </div>
+   <!--  <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div> -->
+  </div>
+          
+

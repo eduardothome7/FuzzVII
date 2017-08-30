@@ -1,10 +1,12 @@
 class ModsController < ApplicationController
   before_action :set_mod, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+  # before_action :auth
   # GET /mods
   # GET /mods.json
   def index
     @mods = Mod.all
+    @mod  = Mod.new
+    @mod_title = "Módulos do Sistema"
   end
 
   # GET /mods/1
@@ -65,6 +67,12 @@ class ModsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_mod
       @mod = Mod.find(params[:id])
+    end
+
+    def auth
+      if !user_signed_in?
+        redirect_to new_user_session_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

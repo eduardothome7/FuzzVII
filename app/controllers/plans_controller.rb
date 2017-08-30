@@ -5,6 +5,7 @@ class PlansController < ApplicationController
   # GET /plans.json
   def index
     @plans = Plan.all
+    @mod_title = "Planos de Usuários"
   end
 
   # GET /plans/1
