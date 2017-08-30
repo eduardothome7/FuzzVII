@@ -35,10 +35,15 @@
       </ul>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
+      <% @category_mods.each do |category_mod| %>
+        <li><a class="subheader"><% if category_mod.icon.present? %><i class="material-icons"><%= category_mod.icon.name %></i><% end %> <%= category_mod.title %></a></li>
+          <% category_mod.mods.each do |mod| %>
+            <li>
+              <a href="<%= mod.slug %>"><i class="material-icons"><%= mod.icon.name %></i> <%= mod.title %></a>             
+            </li>
+          <% end %> 
+        <li><div class="divider"></div></li>
+      <% end %>     
     </ul>
   </div>
 </nav>
