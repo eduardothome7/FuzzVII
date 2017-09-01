@@ -1,20 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Módulos do Sistema</h3>
+<h4>Módulos do Sistema</h4>
 
-<ul class="list_collection">
-  <% @mods.each do |mod| %>
-    <li>
-      <%= mod.name %></td>
-      <%= mod.icon_id %></td>
-              <td><%= link_to 'Show', mod %></td>
-        <td><%= link_to 'Edit', edit_mod_path(mod) %></td>
-        <td><%= link_to 'Destroy', mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    </li>
-  <% end %>
-</ul>
-
-<br>
-
-<%= link_to 'New Mod', new_mod_path %>
+<% @mods.each do |mod|%>
+  <div class="row item"><div class="col m2">THUMB</div><div class="col m10">Nome<br>descrição</div><div class="col m1">action</div></div>
+<% end %>
