@@ -6,7 +6,12 @@
 	border: none;	
 }
 
-.transparent .brand-logo {
+.translucid {
+    background: rgba(0, 0, 0, 0.4);
+  	box-shadow: none;
+}
+
+.translucid .brand-logo, .transparent .brand-logo {
 	background: transparent !important;
 }
 
@@ -14,3 +19,5 @@
 	width: 210px;
 	display: inline-block;
 }
+
+.navbar-fixed {position: absolute;}

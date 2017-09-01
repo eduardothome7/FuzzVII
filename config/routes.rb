@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'home/about'
+
+  get 'home/terms'
+  
+  root :to => 'home#index'
+  
   resources :user_plan_months
   resources :user_plans
   resources :plan_mods
