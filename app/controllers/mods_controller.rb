@@ -21,6 +21,7 @@ class ModsController < ApplicationController
 
   # GET /mods/1/edit
   def edit
+    @mod_title = "<a href='/mods'>Módulos do Sistema</a> ><span>Editar Módulo</span>"
   end
 
   # POST /mods

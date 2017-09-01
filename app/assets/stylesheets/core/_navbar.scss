@@ -1,0 +1,16 @@
+.transparent {
+	box-shadow: none;
+}
+
+.transparent .nav-wrapper {
+	border: none;	
+}
+
+.transparent .brand-logo {
+	background: transparent !important;
+}
+
+.nav_path {
+	width: 210px;
+	display: inline-block;
+}

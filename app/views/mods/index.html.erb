@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">Novo Módulo</a>
+<!-- <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">Novo Módulo</a> -->
+<%= link_to "Novo Módulo", new_mod_path, class: 'waves-effect waves-light blue btn' %>
 
 <section class="list-itens">
   <% @mods.each do |mod| %>
@@ -13,30 +14,25 @@
 
         <!-- Dropdown Structure -->
         <ul id='dropdown<%= mod.id %>' class='dropdown-content'>
-          <li><a href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
-          <li class="divider"></li>
-          <li><a href="#!">three</a></li>
-          <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-          <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+          <li><%= link_to edit_mod_path(mod) do %><i class="material-icons">edit</i> Editar<% end %></li>
+          <li><%= link_to mod, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="material-icons">delete</i> Excluir<% end %></li>       
         </ul>
-
       </div>     
     </div>
   <% end %>
 </section>
 
 <!-- Modal Structure -->
-  <div id="modal1" class="modal modalVertical">
+  <!-- <div id="modal1" class="modal modalVertical">
     <div class="modal-header blue-grey">
       <a href="#!" class="waves-effect waves-light save_form"><i class="material-icons">navigate_before</i></a>Cadastrar módulo
     </div>
     <div class="modal-content">
       <%= render 'form', mod: @mod %>
-    </div>
+    </div> -->
    <!--  <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div> -->
-  </div>
+  <!-- </div> -->
           
 
