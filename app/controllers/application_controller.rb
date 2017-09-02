@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :user_mods
 
   def user_mods
-  	User.where("name == 'admin'").first.admin = true
   	@category_mods = CategoryMod.includes(:mods).where.not(mods: { id: nil})
   end
 
