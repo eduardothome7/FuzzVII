@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col m6 s12">
+
+  </div>
+   <div class="col m6 s12">
+    <section class="form">
+      <h4>Registrar Conta</h4>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        
+        <div class="input-field">
+          <%= f.label "nome" %>
+          <%= f.text_field :name, autofocus: true, class: 'validate' %>
+        </div>
+        
+         <div class="input-field">
+          <%= f.text_field :surname, autofocus: true, class: 'validate' %>
+          <%= f.label "sobrenome" %>
+        </div>
+
+        <div class="input-field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="input-field">
+          <%= f.label "senha" %>      
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
+
+        <div class="input-field">
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.label "confirme a senha" %>
+        </div>
+        
+        <input type="checkbox" required id="myCheckbox" class="filled-in" /><label  for="myCheckbox">Ao me registrar, concordo com os <a class="modal-trigger" href="#terms">Termos de Serviço</a></label>
+
+        <div class="input-field">
+          <%= f.submit "Registrar", class: 'btn waves-effect waves-light teal' %>
+        </div> 
+
+    <% end %>
+      <!-- <%= render "devise/shared/links" %> -->
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="terms" class="modal">
+      <div class="modal-content">
+        <h4>Termos de Serviço e Uso</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+  </div>
+</div>

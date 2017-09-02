@@ -1,6 +1,12 @@
 @import "materialize/components/color";
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 $primary-color: color("blue", "lighten-2") !default;
 $secondary-color: color("yellow", "base") !default;
 @import 'materialize';
 
+@import "core/variables";
+@import "core/mixins";
 @import "core/main";
+@import "core/forms";
+@import "core/navbar";

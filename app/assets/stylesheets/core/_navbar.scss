@@ -1,0 +1,24 @@
+.transparent {
+	box-shadow: none;
+}
+
+.transparent .nav-wrapper {
+	border: none;	
+}
+
+.translucid {
+    background: rgba(0, 0, 0, 0.4);
+  	box-shadow: none;
+}
+
+.translucid .brand-logo, .transparent .brand-logo {
+	background: transparent !important;
+}
+
+.nav_path {
+	width: 210px;
+	padding-left: 7px;
+	display: inline-block;
+}
+
+.navbar-fixed {position: absolute;}

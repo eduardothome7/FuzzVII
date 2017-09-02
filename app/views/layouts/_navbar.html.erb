@@ -1,0 +1,49 @@
+<nav>
+  <div class="nav-wrapper magenta">
+    <a href="#" id="btn_sidebar" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+    <a href="/" class="brand-logo">Logo</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="left">
+      <li>
+        <div class="nav_path"><%= @mod_title.html_safe if @mod_title.present? %></div>
+      </li>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+      <li><a class="dropdown-hover" data-activates="dropdownMessages"><i class="material-icons">message</i></a></li>
+      <li><a class="dropdown-hover" data-activates="dropdownNotifications"><i class="material-icons">notifications_none</i></a></li>
+      <li><a class="dropdown-button magenta-darken waves-effect waves-light btn-large" data-activates="dropdownNavOptions">Novo <i class="material-icons right">arrow_drop_down</i></a></li>
+      <!-- Dropdown Structure -->
+      <ul id='dropdownMessages' class='dropdown-content'>
+        <li><span>Você não possui mensagens não lidas.</span></li>
+      </ul>
+      <!-- Dropdown Structure -->
+      <ul id='dropdownNotifications' class='dropdown-content'>
+        <li><span>Você não possui notificações.</span></li>
+      </ul>
+      <!-- Dropdown Structure -->
+      <ul id='dropdownNavOptions' class='dropdown-content'>
+        <% @category_mods.each do |category_mod| %>
+        <li><a class="subheader"><% if category_mod.icon.present? %><i class="material-icons"><%= category_mod.icon.name %></i><% end %> <%= category_mod.title %></a></li>
+        <% category_mod.mods.each do |mod| %>
+        <li>
+          <a href="<%= mod.slug %>"><i class="material-icons"><%= mod.icon.name %></i> <%= mod.title %></a>             
+        </li>
+        <% end %> 
+        <li class="divider"></li>
+        <% end %>   
+      </ul>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <% @category_mods.each do |category_mod| %>
+        <li><a class="subheader"><% if category_mod.icon.present? %><i class="material-icons"><%= category_mod.icon.name %></i><% end %> <%= category_mod.title %></a></li>
+          <% category_mod.mods.each do |mod| %>
+            <li>
+              <a href="<%= mod.slug %>"><i class="material-icons"><%= mod.icon.name %></i> <%= mod.title %></a>             
+            </li>
+          <% end %> 
+        <li><div class="divider"></div></li>
+      <% end %>     
+    </ul>
+  </div>
+</nav>

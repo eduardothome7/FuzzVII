@@ -1,17 +1,179 @@
-@import "variables";
+body {
+	
+}
+
+.gradient-primary {
+	background: #c0392b;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
 .magenta {
 	background: $theme-primary;
+}
+
+.magenta-darken {
+	background: $theme-darken;
 }
 
 #btn_sidebar {
 	display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	
 	#btn_sidebar {
 		display: none;
 	}
 
+	nav ul.left {
+	    margin-left: 0 !important;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	nav .brand-logo {
+		background: $theme-darken;
+    	width: 11%;
+    	padding: 0 42px;
+	}
+}
+
+nav ul.left {
+    float: left;
+    margin-left: 11.2%;
+}
+
+nav ul li text {
+	font-size: 1rem;
+    color: #fff;
+    display: block;
+    padding: 0 15px;
+}
+
+.content {
+	padding: 8px 0px;
+}
+
+.btn-white {
+	background: #fff;
+	color: #b3b3b3 !important;
+}
+
+.list-itens {
+	margin-top: 1pc;
+}
+
+.item {
+	border-bottom: 1px solid #d4d4d4;
+	margin: 0;
+}
+
+.item:hover {
+	background: #f5f5f5;
+}
+
+.item .thumb {
+	background: #cecece;
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 7px;
+    color: #fff;
+    margin-bottom: 9px;
+    margin-top: 9px;
+}
+
+.item .action {
+	padding-top: 20px;	
+}
+
+.item .content {
+	padding: 12px;
+}
+
+.item:last-child {
+	border:none;	
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: grey;
+}
+
+.grey {
+	color: grey;
+}
+
+.modalVertical {
+	max-height: 95% !important;
+	width: 51%;
+}
+
+.modal {
+	.modal-header {
+		color: #fff;
+    	padding: 16px 83px;
+    	font-size: 18px;
+	    a {
+			position: absolute;
+		    left: 17px;
+		    color: #fff;
+		    top: 15px;
+	    }
+	}
+}
+
+
+.dropdown-content {
+	background-color: #FFFFFF;
+	margin: 0;
+	display: none;
+	min-width: 300px; /* Changed this to accomodate content width */
+	max-height: auto;
+	margin-left: -1px; /* Add this to keep dropdown in line with edge of navbar */
+	overflow: hidden; /* Changed this from overflow-y:auto; to overflow:hidden; */
+	opacity: 0;
+	position: absolute;
+	white-space: nowrap;
+	z-index: 1;
+	will-change: width, height;
+}
+
+.banner {
+	margin-top: 0;
+  	@include gradient(#36D1DC, #5B86E5);
+
+    padding: 7pc 1pc 3pc 1pc;
+    text-align: center;	
+
+	h1 {
+		font-family: 'Montserrat', sans-serif;
+		color: #fff;
+	}
+}
+
+.action-float {
+	position: absolute;
+}
+
+.bottom-right {
+	bottom: 2pc;
+    right: 2pc;
+}
+
+.white {
+	color: grey;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.float-icon {
+	position: absolute;
+    left: 5px;
+}
+
+.btn-dropdown-size {
+	width: 17pc;
 }

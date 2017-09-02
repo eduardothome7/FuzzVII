@@ -5,3 +5,26 @@
 <% @mods.each do |mod|%>
   <div class="row item"><div class="col m2">THUMB</div><div class="col m10">Nome<br>descrição</div><div class="col m1">action</div></div>
 <% end %>
+
+<!-- <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">Novo Módulo</a> -->
+<%= link_to "Novo Módulo", new_mod_path, class: 'waves-effect waves-light blue btn' %>
+
+<section class="list-itens">
+  <% @mods.each do |mod| %>
+    <div class="row item">
+      <div class="col m1 s2"><div class="thumb"><i class="material-icons"><%= mod.icon.name %></i></div></div>
+      <div class="col m10 s9 content"><%= mod.title %></div>
+      <div class="col m1 s1 action">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-button' href='#' data-activates='dropdown<%= mod.id %>'><i class="material-icons">more_vert</i></a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown<%= mod.id %>' class='dropdown-content'>
+          <li><%= link_to edit_mod_path(mod) do %><i class="material-icons">edit</i> Editar<% end %></li>
+          <li><%= link_to mod, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="material-icons">delete</i> Excluir<% end %></li>       
+        </ul>
+      </div>     
+    </div>
+  <% end %>
+</section>
+
