@@ -1,7 +1,7 @@
 class ModsController < ApplicationController
   before_action :set_mod, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  before_action :auth
+  before_action :admin
 
   $mod_title = "Módulos do Sistema"
 
@@ -75,9 +75,9 @@ class ModsController < ApplicationController
       @mod = Mod.find(params[:id])
     end
 
-    def auth
-      if !user_signed_in?
-        redirect_to new_user_session_path
+    def admin
+      if !current_user.admin
+        redirect_to root_path
       end
     end
 
