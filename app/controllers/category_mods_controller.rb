@@ -7,11 +7,8 @@ class CategoryModsController < ApplicationController
 
   def index
     @category_mods = CategoryMod.all
-<<<<<<< HEAD
     @mod_title = "Categorias(Módulos do Sistema)"
-=======
     @mod_title = $mod_title
->>>>>>> 98c77bf6b0376d8a0fcd7a6ebec74861e84a4222
   end
 
   # GET /category_mods/1
