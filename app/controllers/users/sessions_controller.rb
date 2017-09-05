@@ -3,20 +3,30 @@ class Users::SessionsController < Devise::SessionsController
   layout "layout"
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
-
-  # POST /resource/sign_in
-  def create
-    redirect_to mods_path if current_user.admin
+  def new
     super
   end
 
+  # POST /resource/sign_in
+  def create
+    if current_user
+      if current_user.admin?
+        redirect_to mods_path
+      else
+        redirect_to events_path
+      end
+      super
+    end
+  end
+
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    super
+  end
+
+  def after_sign_in_path_for(resource_or_scope)
+    session.fetch 'user_return_to', user_path
+  end
 
   
   # protected   
