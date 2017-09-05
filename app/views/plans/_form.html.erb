@@ -31,6 +31,13 @@
     <%= form.number_field :icon_id, id: :plan_icon_id %>
   </div>
 
+  <% Mod.all.each do |mod| %>
+    <div class="field">
+      <%= check_box_tag "plan[mod_ids][]", mod.id, plan.mods.include?(mod) %>
+      <%= mod.name %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

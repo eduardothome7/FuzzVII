@@ -10,12 +10,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170818143856) do
+ActiveRecord::Schema.define(version: 20170905021010) do
+
+  create_table "calendars", force: :cascade do |t|
+    t.string "title"
+    t.integer "room_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.decimal "hour_interval"
+    t.decimal "hour_limit"
+    t.string "color"
+    t.boolean "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "weekend"
+    t.boolean "holiday"
+  end
+
+  create_table "categories_products", force: :cascade do |t|
+    t.integer "mod_id"
+    t.integer "plan_id"
+  end
+
+  create_table "category_events", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "icon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "category_mods", force: :cascade do |t|
     t.string "title"
     t.string "name"
     t.string "icon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.integer "calendar_id"
+    t.decimal "total_amount"
+    t.datetime "start_at"
+    t.decimal "duration"
+    t.text "invites"
+    t.text "description"
+    t.integer "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,6 +96,34 @@ ActiveRecord::Schema.define(version: 20170818143856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "price"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "studio_id"
+    t.string "picture"
+    t.text "description"
+    t.decimal "price_hour"
+    t.decimal "price_weekend"
+    t.decimal "price_late"
+    t.integer "category_event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "studios", force: :cascade do |t|
+    t.string "name"
+    t.string "social_name"
+    t.string "email"
+    t.text "description"
+    t.integer "user_id"
+    t.string "cep"
+    t.string "address"
+    t.string "city"
+    t.string "uf"
+    t.string "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_plan_months", force: :cascade do |t|

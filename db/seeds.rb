@@ -38,3 +38,6 @@
 	Disponibilize equipamentos para locação e controle o fluxo através do calendário!', 'price': 800.0)
 @plan3 = Plan.create('name':'Empresário', 'description': 'Administre até 3 estúdios! Registro e liberação de funções para funcionários. Controle de gastos do estúdio e financeiro.', 'price': 1000.0)
 
+@category_event = CategoryEvent.create(name: 'Ensaio')
+@category_event2 = CategoryEvent.create(name: 'Gravação')
+@category_event3 = CategoryEvent.create(name: 'Mixagem')

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @calendar.title %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @calendar.room_id %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @calendar.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @calendar.end_at %>
+</p>
+
+<p>
+  <strong>Hour interval:</strong>
+  <%= @calendar.hour_interval %>
+</p>
+
+<p>
+  <strong>Hour limit:</strong>
+  <%= @calendar.hour_limit %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @calendar.color %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @calendar.public %>
+</p>
+
+<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<%= link_to 'Back', calendars_path %>
