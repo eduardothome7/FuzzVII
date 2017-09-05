@@ -16,6 +16,7 @@ class ModsController < ApplicationController
 
   # GET /mods/new
   def new
+    @mod_title = "Incluir Módulo"
     @mod = Mod.new
   end
 

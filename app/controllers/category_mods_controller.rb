@@ -5,6 +5,7 @@ class CategoryModsController < ApplicationController
   # GET /category_mods.json
   def index
     @category_mods = CategoryMod.all
+    @mod_title = "Categorias(Módulos do Sistema)"
   end
 
   # GET /category_mods/1
@@ -14,6 +15,7 @@ class CategoryModsController < ApplicationController
 
   # GET /category_mods/new
   def new
+    @mod_title = "Planos de Usuários"
     @category_mod = CategoryMod.new
   end
 

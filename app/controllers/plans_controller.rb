@@ -15,11 +15,13 @@ class PlansController < ApplicationController
 
   # GET /plans/new
   def new
+    @mod_title = "Incluir Planos de Usuários"
     @plan = Plan.new
   end
 
   # GET /plans/1/edit
   def edit
+    @mod_title = "Editar Planos de Usuários"
   end
 
   # POST /plans
