@@ -1,12 +1,16 @@
 class ModsController < ApplicationController
   before_action :set_mod, only: [:show, :edit, :update, :destroy]
-  # before_action :auth
+  # before_action :authenticate_user!
+  # before_action :admin
+
+  $mod_title = "Módulos do Sistema"
+
   # GET /mods
   # GET /mods.json
   def index
     @mods = Mod.all
     @mod  = Mod.new
-    @mod_title = "Módulos do Sistema"
+    @mod_title = $mod_title
   end
 
   # GET /mods/1
@@ -18,11 +22,12 @@ class ModsController < ApplicationController
   def new
     @mod_title = "Incluir Módulo"
     @mod = Mod.new
+    @mod_title = "<a href='/mods'>#{$mod_title}</a> ><span>Incluir Módulo</span>"
   end
 
   # GET /mods/1/edit
   def edit
-    @mod_title = "<a href='/mods'>Módulos do Sistema</a> ><span>Editar Módulo</span>"
+    @mod_title = "<a href='/mods'>#{$mod_title}</a> ><span>Editar Módulo</span>"
   end
 
   # POST /mods
@@ -71,9 +76,9 @@ class ModsController < ApplicationController
       @mod = Mod.find(params[:id])
     end
 
-    def auth
-      if !user_signed_in?
-        redirect_to new_user_session_path
+    def admin
+      if !current_user.admin
+        redirect_to root_path
       end
     end
 

@@ -5,7 +5,7 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="left">
       <li>
-        <div class="nav_path"><%= @mod_title.html_safe %></div>
+        <div class="nav_path"><%= @mod_title.html_safe if @mod_title.present? %></div>
       </li>
     </ul>
     <ul class="right hide-on-med-and-down">

@@ -5,6 +5,7 @@ class PlanModsController < ApplicationController
   # GET /plan_mods.json
   def index
     @plan_mods = PlanMod.all
+    @mod_title = "Planos de Usuários"
   end
 
   # GET /plan_mods/1
@@ -15,6 +16,7 @@ class PlanModsController < ApplicationController
   # GET /plan_mods/new
   def new
     @plan_mod = PlanMod.new
+    @mod_title = "<a href='/user_plans'>Planos de Usuários</a> ><span>Editar Plano de Usuário</span>"
   end
 
   # GET /plan_mods/1/edit

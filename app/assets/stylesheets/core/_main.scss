@@ -8,6 +8,10 @@ body {
 	background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.container-fluid {
+	padding: 1pc;	
+}
+
 .magenta {
 	background: $theme-primary;
 }

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mod_tour.title %>
+</p>
+
+<p>
+  <strong>Mod:</strong>
+  <%= @mod_tour.mod_id %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @mod_tour.picture %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mod_tour.description %>
+</p>
+
+<p>
+  <strong>Background-color:</strong>
+  <%= @mod_tour.background-color %>
+</p>
+
+<p>
+  <strong>A link:</strong>
+  <%= @mod_tour.a_link %>
+</p>
+
+<%= link_to 'Edit', edit_mod_tour_path(@mod_tour) %> |
+<%= link_to 'Back', mod_tours_path %>

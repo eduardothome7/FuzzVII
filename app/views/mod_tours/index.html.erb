@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mod Tours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Mod</th>
+      <th>Picture</th>
+      <th>Description</th>
+      <th>Background-color</th>
+      <th>A link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mod_tours.each do |mod_tour| %>
+      <tr>
+        <td><%= mod_tour.title %></td>
+        <td><%= mod_tour.mod_id %></td>
+        <td><%= mod_tour.picture %></td>
+        <td><%= mod_tour.description %></td>
+        <td><%= mod_tour.background-color %></td>
+        <td><%= mod_tour.a_link %></td>
+        <td><%= link_to 'Show', mod_tour %></td>
+        <td><%= link_to 'Edit', edit_mod_tour_path(mod_tour) %></td>
+        <td><%= link_to 'Destroy', mod_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mod Tour', new_mod_tour_path %>

@@ -4,32 +4,32 @@
   </div>
    <div class="col m6 s12">
     <section class="form">
-      <h4>Registrar Conta</h4>
+      <h5>Registrar Conta</h5>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
         
         <div class="input-field">
           <%= f.label "nome" %>
-          <%= f.text_field :name, autofocus: true, class: 'validate' %>
+          <%= f.text_field :name, class: 'validate' %>
         </div>
         
          <div class="input-field">
-          <%= f.text_field :surname, autofocus: true, class: 'validate' %>
+          <%= f.text_field :surname, class: 'validate' %>
           <%= f.label "sobrenome" %>
         </div>
 
         <div class="input-field">
           <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true %>
+          <%= f.email_field :email %>
         </div>
 
         <div class="input-field">
           <%= f.label "senha" %>      
-          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.password_field :password %>
         </div>
 
         <div class="input-field">
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.password_field :password_confirmation %>
           <%= f.label "confirme a senha" %>
         </div>
         

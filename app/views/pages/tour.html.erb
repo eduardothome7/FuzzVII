@@ -1,0 +1,10 @@
+<% @modTours.each do |mod_tour| %>
+	<section class="cover container-fluid">
+		<h1><%= mod_tour.title %></h1>
+		<p><%= mod_tour.description %></p>
+
+		<div class="bottom right btn-group">
+			<%= link_to "#{mod_tour.a_link}", class: 'btn amber waves-effect waves-light' do %>Iniciar<% end %>
+		</div>
+	</section>
+<% end %>

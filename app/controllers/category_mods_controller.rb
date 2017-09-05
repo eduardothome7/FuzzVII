@@ -3,9 +3,15 @@ class CategoryModsController < ApplicationController
   # before_action :authenticate_user!
   # GET /category_mods
   # GET /category_mods.json
+  $mod_title = "Categorias de Módulos"
+
   def index
     @category_mods = CategoryMod.all
+<<<<<<< HEAD
     @mod_title = "Categorias(Módulos do Sistema)"
+=======
+    @mod_title = $mod_title
+>>>>>>> 98c77bf6b0376d8a0fcd7a6ebec74861e84a4222
   end
 
   # GET /category_mods/1
@@ -17,6 +23,7 @@ class CategoryModsController < ApplicationController
   def new
     @mod_title = "Planos de Usuários"
     @category_mod = CategoryMod.new
+    @mod_title = "<a href='/user_plans'>#{$mod_title}</a> ><span>Editar Plano de Usuário</span>"
   end
 
   # GET /category_mods/1/edit

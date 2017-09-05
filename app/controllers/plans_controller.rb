@@ -5,7 +5,7 @@ class PlansController < ApplicationController
   # GET /plans.json
   def index
     @plans = Plan.all
-    @mod_title = "Planos de Usuários"
+    @mod_title = "Planos"
   end
 
   # GET /plans/1
@@ -16,6 +16,7 @@ class PlansController < ApplicationController
   # GET /plans/new
   def new
     @mod_title = "Incluir Planos de Usuários"
+    @mod_title = "<a href='/plans'>#{$mod_title}</a> ><span>Incluir Plano</span>"
     @plan = Plan.new
   end
 
@@ -72,6 +73,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:name, :description, :month_price, :icon_id)
+      params.require(:plan).permit(:name, :description, :month_price, :icon_id, :mod_ids)
     end
 end

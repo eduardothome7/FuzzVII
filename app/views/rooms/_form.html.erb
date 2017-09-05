@@ -1,0 +1,57 @@
+<%= form_with(model: room, local: true) do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+      <% room.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :room_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :studio_id %>
+    <%= form.number_field :studio_id, id: :room_studio_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :room_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :room_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_hour %>
+    <%= form.text_field :price_hour, id: :room_price_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_weekend %>
+    <%= form.text_field :price_weekend, id: :room_price_weekend %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_late %>
+    <%= form.text_field :price_late, id: :room_price_late %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_event %>
+    <%= form.number_field :category_event, id: :room_category_event %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

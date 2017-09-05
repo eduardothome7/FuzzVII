@@ -38,3 +38,13 @@
 	Disponibilize equipamentos para locação e controle o fluxo através do calendário!', 'price': 800.0)
 @plan3 = Plan.create('name':'Empresário', 'description': 'Administre até 3 estúdios! Registro e liberação de funções para funcionários. Controle de gastos do estúdio e financeiro.', 'price': 1000.0)
 
+@category_event = CategoryEvent.create(name: 'Ensaio')
+@category_event2 = CategoryEvent.create(name: 'Gravação')
+@category_event3 = CategoryEvent.create(name: 'Mixagem')
+
+@mod_tour_studios  = ModTour.create(title: 'Estúdios',mod_id: 5, picture: '', description: 'Olá! Bem vindo ao sistema Fuzz! Antes de agendar, você precisa cadastrar seu estúdio musical. Não se preocupe, o cadastro é simples e rápido, e após a confirmação, você já pode adicionar as salas. Para iniciar, clique no botão abaixo, no canto direito!', background: 'gradient_purple', a_link: 'new_studio_path' )
+@mod_tour_rooms    = ModTour.create(title: 'Salas',mod_id: 15, picture: '', description: 'Olá denovo! Bom, imaginamos que você já cadastrou seu estúdio! Simples não? Agora, vocÊ poderá cadastrar uma ou mais salas de ensaio ou espaços de gravação, onde seus clientes irão se reunir e utilizar o espaço disponibilizado. O cadastro é tão simples quando o passo anterior! Quando desejar iniciar, clique no botão do canto inferior direito! :)', a_link: 'new_room_path' )
+@mod_tour_calendar = ModTour.create(title: 'Calendário de Reservas',mod_id: 15, picture: '', description: 'Quase pronto! Agora que você cadastrou pelo menos uma sala, para habilitar o agendamento de reservas, vocÊ deverá disponibilizar o calendário, feito de acordo com o horário de funcionamento! Para cadastro o calendário das salas, clique no botão no canto superior direito!', a_link: 'new_calendar_path' )
+@mod_tour_events   = ModTour.create(title: 'Reservas', mod_id: 7, picture: '', description: 'Pronto! Você já realizou os cadastros necessários para realizar reservas em sua agenda! Você habilitou o calendário para reservas! Este é apenas o começo! Você ainda poderá adicionar funcionários e equipamentos em seu estúdio! Para agendar sua primeira reserva é fácil! Você poderá ver clicando no botão do canto direito abaixo! Boas reservas! ')
+
+

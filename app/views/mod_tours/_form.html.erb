@@ -1,0 +1,47 @@
+<%= form_with(model: mod_tour, local: true) do |form| %>
+  <% if mod_tour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mod_tour.errors.count, "error") %> prohibited this mod_tour from being saved:</h2>
+
+      <ul>
+      <% mod_tour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :mod_tour_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mod_id %>
+    <%= form.number_field :mod_id, id: :mod_tour_mod_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :mod_tour_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :mod_tour_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :background-color %>
+    <%= form.text_field :background-color, id: :mod_tour_background-color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :a_link %>
+    <%= form.text_field :a_link, id: :mod_tour_a_link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
