@@ -4,8 +4,15 @@ body {
 
 .gradient-primary {
 	background: #c0392b;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #8e44ad, #c0392b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	@include gradient(#8e44ad, #c0392b);  /* Chrome 10-25, Safari 5.1-6 */
+}
+
+.gradient-blue {
+	@include gradient3(#24405d, #0a3056, #133779);
+
+}
+.container {
+	margin-top: 3pc;
 }
 
 .container-fluid {
@@ -22,6 +29,14 @@ body {
 
 #btn_sidebar {
 	display: block;
+}
+
+.padding {
+    padding: 2pc;
+}
+
+.white {
+    background: #fff;	
 }
 
 @media screen and (max-width: 768px) {

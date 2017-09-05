@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905125047) do
+ActiveRecord::Schema.define(version: 20170905172300) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "title"
@@ -135,6 +135,16 @@ ActiveRecord::Schema.define(version: 20170905125047) do
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "open_at"
+    t.datetime "close_at"
+    t.string "telephone"
+    t.string "celphone"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "site"
+    t.string "n"
+    t.string "ngb"
+    t.string "cnpj"
   end
 
   create_table "user_plan_months", force: :cascade do |t|

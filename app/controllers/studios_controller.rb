@@ -17,6 +17,13 @@ class StudiosController < ApplicationController
     @studio = Studio.new
   end
 
+  def getByName
+    @studio = Studio.search(params[:name])
+    respond_to do |format|
+      format.js 
+    end
+  end
+
   # GET /studios/1/edit
   def edit
   end
@@ -26,15 +33,13 @@ class StudiosController < ApplicationController
   def create
     @studio = Studio.new(studio_params)
 
-    respond_to do |format|
-      if @studio.save
-        format.html { redirect_to @studio, notice: 'Studio was successfully created.' }
-        format.json { render :show, status: :created, location: @studio }
-      else
-        format.html { render :new }
-        format.json { render json: @studio.errors, status: :unprocessable_entity }
-      end
+    if @studio.save
+      session[:studio_id] = @studio.id
+      redirect_to studio_steps_path 
+    else
+      render :new
     end
+
   end
 
   # PATCH/PUT /studios/1
@@ -62,13 +67,9 @@ class StudiosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_studio
-      @studio = Studio.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def studio_params
-      params.require(:studio).permit(:name, :social_name, :email, :description, :user_id, :cep, :address, :city, :uf, :picture)
+      params.require(:studio).permit(:name, :social_name, :cnpj, :email, :description, :user_id, :cep, :address, :city, :uf, :picture, :open_at, :close_at, :telephone, :celphone, :facebook, :instagram, :site, :n, :ngb)
     end
 end

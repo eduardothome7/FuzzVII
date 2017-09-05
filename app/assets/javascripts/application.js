@@ -34,4 +34,12 @@ $(document).ready(function(){
       alignment: 'right' // Displays dropdown with edge aligned to the left of button
     });
 
+    $('#studio_name').change(function(){
+      var studio_name = $(this).val(); 
+      $.ajax({
+         url: '/studios/getByName',
+         data: { name: studio_name }
+      });
+    });
+
 });

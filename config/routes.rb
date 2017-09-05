@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
   get 'pages/plans'
 
-  resources :studios
+  resources :studios  
+
+  post 'studios/getByName', :to => 'studios#getByName'
+
   get 'home/index'
 
   get 'home/about'
@@ -31,5 +34,8 @@ Rails.application.routes.draw do
   resources :category_mods
   resources :icons
   resources :mods
+
+  resources :studio_steps
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

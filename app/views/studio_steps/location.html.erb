@@ -1,0 +1,59 @@
+<%= form_for @studio, url: wizard_path, method: :put do |form| %>
+  
+  <% if @studio.errors.any? %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@studio.errors.count, "erros") %> encontrados durante o cadastro do estúdio:</h4>
+      <ul>
+        <% @studio.errors.full_messages.each do |message| %>
+          <li><span class="glyphicon glyphicon-remove"></span> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">    
+    <div class="input-field col m2">
+      <%= form.label :cep %>
+      <%= form.text_field :cep, id: :studio_cep %>
+    </div>
+  
+    <div class="input-field col m9">
+      <%= form.label "logradouro" %>
+      <%= form.text_field :address, id: :studio_address %>
+    </div>
+
+    <div class="input-field col m1">
+      <%= form.label "nº" %>
+      <%= form.text_field :n, id: :studio_n %>
+    </div> 
+  </div>
+
+  <div class="row">    
+    
+    <div class="input-field col m4">
+      <%= form.label "bairro" %>
+      <%= form.text_field :ngb, id: :studio_ngb %>
+    </div>
+
+    <div class="input-field col m7">
+      <%= form.label "cidade" %>
+      <%= form.text_field :city, id: :studio_city %>
+    </div>
+
+    <div class="input-field col m1">
+      <%= form.label "uf" %>
+      <%= form.text_field :uf, id: :studio_uf %>
+    </div>
+  </div>
+
+  <div class="row">
+   <div class="col m9">
+      <%= link_to 'Voltar', edit_studio_path(@studio) %>
+    </div>
+    <div class="col m2">
+      <%= form.submit "Salvar e próximo", class: 'btn blue waves-effects waves-light' %>
+    </div>
+  </div>
+
+
+<% end %>

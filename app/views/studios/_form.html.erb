@@ -1,8 +1,7 @@
 <%= form_with(model: studio, local: true) do |form| %>
   <% if studio.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(studio.errors.count, "error") %> prohibited this studio from being saved:</h2>
-
+      <h5><%= pluralize(studio.errors.count, "error") %> erros ao salvar estúdio:</h5>
       <ul>
       <% studio.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,57 +10,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
+  <div class="input-field">
+    <%= form.label "Nome do estúdio *" %>
     <%= form.text_field :name, id: :studio_name %>
   </div>
 
-  <div class="field">
-    <%= form.label :social_name %>
+<!--   <div class="input-field">
+    <%= form.label "Razão Social" %>
     <%= form.text_field :social_name, id: :studio_social_name %>
-  </div>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :email %>
+  <div class="input-field">
+    <%= form.label "email" %>
     <%= form.text_field :email, id: :studio_email %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :studio_description %>
+  <div class="input-field">
+    <%= form.label "descrição do Estúdio" %>
+    <%= form.text_area :description, class: 'materialize-textarea', id: :studio_description %>
+  </div>
+ 
+  <div class="file-field input-field">
+    <div class="btn blue-grey lighten-3">
+      <span>Imagem Principal</span>
+      <%= form.file_field :picture, id: :studio_picture %>
+    </div>
+    <input class="file-path validate" type="text"/>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :studio_user_id %>
+  <div class="row">
+    <div class="col m2 offset-m9">
+      <div class=" input-field">
+        <%= form.submit "Salvar e próximo", class: 'btn blue waves-effects waves-light' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :cep %>
-    <%= form.text_field :cep, id: :studio_cep %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :studio_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :studio_city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :uf %>
-    <%= form.text_field :uf, id: :studio_uf %>
-  </div>
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture, id: :studio_picture %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
