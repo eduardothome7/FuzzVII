@@ -47,7 +47,8 @@ class StudiosController < ApplicationController
   def update
     respond_to do |format|
       if @studio.update(studio_params)
-        format.html { redirect_to @studio, notice: 'Studio was successfully updated.' }
+        session[:studio_id] = @studio.id
+        format.html { redirect_to studio_steps_path, notice: 'Studio was successfully updated.' }
         format.json { render :show, status: :ok, location: @studio }
       else
         format.html { render :edit }
@@ -67,6 +68,11 @@ class StudiosController < ApplicationController
   end
 
   private
+
+    # Use callbacks to share common setup or constraints between actions.
+    def set_studio
+      @studio = Studio.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def studio_params
