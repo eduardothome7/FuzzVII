@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require materialize
 //= require moment
+//= require maskedinput  
 //= require_tree .
 
 
@@ -41,5 +42,9 @@ $(document).ready(function(){
          data: { name: studio_name }
       });
     });
+
+    $('.cnpj').mask("99.999.999/9999-99");
+
+    $('.cep').mask("99999-999");
 
 });

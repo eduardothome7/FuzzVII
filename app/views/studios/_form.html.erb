@@ -11,31 +11,23 @@
   <% end %>
 
   <div class="input-field">
-    <%= form.label "Nome do estúdio *" %>
+    <%= form.label "Nome *" %>
     <%= form.text_field :name, id: :studio_name %>
   </div>
 
-<!--   <div class="input-field">
-    <%= form.label "Razão Social" %>
-    <%= form.text_field :social_name, id: :studio_social_name %>
-  </div> -->
+  <div class="input-field">
+    <%= form.label "CNPJ *" %>
+    <%= form.text_field :cnpj, id: :studio_cnpj, class: :cnpj %>
+  </div> 
 
   <div class="input-field">
-    <%= form.label "email" %>
-    <%= form.text_field :email, id: :studio_email %>
+    <%= form.label "email *" %>
+    <%= form.email_field :email, id: :studio_email %>
   </div>
 
   <div class="input-field">
-    <%= form.label "descrição do Estúdio" %>
+    <%= form.label "descrição" %>
     <%= form.text_area :description, class: 'materialize-textarea', id: :studio_description %>
-  </div>
- 
-  <div class="file-field input-field">
-    <div class="btn blue-grey lighten-3">
-      <span>Imagem Principal</span>
-      <%= form.file_field :picture, id: :studio_picture %>
-    </div>
-    <input class="file-path validate" type="text"/>
   </div>
 
   <div class="row">

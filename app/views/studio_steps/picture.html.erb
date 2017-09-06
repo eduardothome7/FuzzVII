@@ -1,0 +1,21 @@
+<%= form_with(model: studio, local: true, multipart: true) do |form| %>
+  <% if studio.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(studio.errors.count, "error") %> erros ao subir imagem:</h5>
+      <ul>
+      <% studio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="file-field input-field">
+    <div class="btn blue-grey lighten-3">
+      <span>Imagem Principal</span>
+      <%= form.file_field :picture, id: :studio_picture %>
+    </div>
+    <input class="file-path validate" type="text"/>
+  </div>
+
+<% end %>

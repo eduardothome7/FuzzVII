@@ -12,14 +12,15 @@
   <% end %>
 
   <div class="row">    
-    <div class="input-field col m2">
+    <div class="input-field col m3">
+      <i class="material-icons prefix">search</i>
       <%= form.label :cep %>
-      <%= form.text_field :cep, id: :studio_cep %>
+      <%= form.text_field :cep, id: :studio_cep, class: :cep %>
     </div>
   
-    <div class="input-field col m9">
+    <div class="input-field col m8">
       <%= form.label "logradouro" %>
-      <%= form.text_field :address, id: :studio_address %>
+      <%= form.text_field :address, id: :studio_address, disabled: :true %>
     </div>
 
     <div class="input-field col m1">
@@ -32,17 +33,17 @@
     
     <div class="input-field col m4">
       <%= form.label "bairro" %>
-      <%= form.text_field :ngb, id: :studio_ngb %>
+      <%= form.text_field :ngb, id: :studio_ngb, disabled: :true %>
     </div>
 
     <div class="input-field col m7">
       <%= form.label "cidade" %>
-      <%= form.text_field :city, id: :studio_city %>
+      <%= form.text_field :city, id: :studio_city, disabled: :true %>
     </div>
 
     <div class="input-field col m1">
       <%= form.label "uf" %>
-      <%= form.text_field :uf, id: :studio_uf %>
+      <%= form.text_field :uf, id: :studio_uf, disabled: :true %>
     </div>
   </div>
 

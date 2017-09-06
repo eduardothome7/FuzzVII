@@ -1,5 +1,7 @@
 class StudiosController < ApplicationController
   before_action :set_studio, only: [:show, :edit, :update, :destroy]
+  layout :set_layout
+  before_action :set_mod
 
   # GET /studios
   # GET /studios.json
@@ -68,6 +70,18 @@ class StudiosController < ApplicationController
   end
 
   private
+    def set_layout
+      case action_name
+      when "index"
+        "layout_banner"
+      else
+        "application"
+      end
+    end
+
+    def set_mod
+      
+    end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_studio
