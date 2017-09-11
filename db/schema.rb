@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911130559) do
+ActiveRecord::Schema.define(version: 20170911145052) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "title"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170911130559) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "icon_id"
+    t.string "bg_color"
   end
 
   create_table "plan_mods", force: :cascade do |t|

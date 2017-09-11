@@ -2,17 +2,19 @@
 
 <div class="row">
   
-  <div class="col m4">
+  <div class="col m3 s12">
     <div class="card">
-      <div class="card-image waves-effect waves-block waves-light">
-        <span class="card-title activator grey-text text-darken-4 text-center"><i class="material-icons">playlist_add</i></span>
-        <p class="text-center">Cadastrar Estúdio</p>
-      </div>
+      <%= link_to new_studio_path do %>
+        <div class="card-image waves-effect waves-block waves-light">
+          <span class="card-title activator grey-text text-darken-4 text-center"></span>
+          <p class="text-center"><i class="material-icons i_center">playlist_add</i> <BR>Cadastrar Estúdio</p>
+        </div>
+      <% end %>
     </div>      
   </div>
 
   <% @studios.each do |studio| %>
-    <div class="col m4">
+    <div class="col m3 s12">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
           <img class="activator" src="images/office.jpg">
