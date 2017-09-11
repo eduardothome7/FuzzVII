@@ -35,7 +35,7 @@
         <li><a class="subheader"><% if category_mod.icon.present? %><i class="material-icons"><%= category_mod.icon.name %></i><% end %> <%= category_mod.title %></a></li>
           <% category_mod.mods.each do |mod| %>
             <li>
-              <a href="<%= mod.slug %>"><i class="material-icons"><%= mod.icon.name %></i> <%= mod.title %></a>             
+              <a href="/<%= mod.slug %>"><i class="material-icons"><%= mod.icon.name %></i> <%= mod.title %></a>             
             </li>
           <% end %> 
         <li><div class="divider"></div></li>
