@@ -24,13 +24,9 @@
       <!-- Dropdown Structure -->
       <ul id='dropdownNavOptions' class='dropdown-content'>
         <% @category_mods.each do |category_mod| %>
-        <li><a class="subheader"><% if category_mod.icon.present? %><i class="material-icons"><%= category_mod.icon.name %></i><% end %> <%= category_mod.title %></a></li>
-        <% category_mod.mods.each do |mod| %>
-        <li>
-          <a href="<%= mod.slug %>"><i class="material-icons"><%= mod.icon.name %></i> <%= mod.title %></a>             
-        </li>
-        <% end %> 
-        <li class="divider"></li>
+          <li><a class="subheader"><% if category_mod.icon.present? %><i class="material-icons"><%= category_mod.icon.name %></i><% end %> <%= category_mod.title %></a></li>
+         
+          <li class="divider"></li>
         <% end %>   
       </ul>
     </ul>

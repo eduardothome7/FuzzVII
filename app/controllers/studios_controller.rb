@@ -80,7 +80,7 @@ class StudiosController < ApplicationController
     end
 
     def set_mod
-      
+      @mod = Mod.find_by(slug: "studios")  
     end
 
     # Use callbacks to share common setup or constraints between actions.
