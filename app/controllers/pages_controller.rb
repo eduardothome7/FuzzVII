@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   layout :set_layout
+  before_action :authenticate_user!, only: [:tour]
 
   def about
   end

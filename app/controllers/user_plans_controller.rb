@@ -1,5 +1,6 @@
 class UserPlansController < ApplicationController
   before_action :set_user_plan, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /user_plans
   # GET /user_plans.json

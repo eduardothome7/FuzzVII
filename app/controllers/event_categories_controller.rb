@@ -1,5 +1,6 @@
 class EventCategoriesController < ApplicationController
   before_action :set_event_category, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /event_categories
   # GET /event_categories.json

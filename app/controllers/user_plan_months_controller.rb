@@ -1,6 +1,7 @@
 class UserPlanMonthsController < ApplicationController
   before_action :set_user_plan_month, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /user_plan_months
   # GET /user_plan_months.json
   def index

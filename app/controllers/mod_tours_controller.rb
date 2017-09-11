@@ -1,5 +1,6 @@
 class ModToursController < ApplicationController
   before_action :set_mod_tour, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /mod_tours
   # GET /mod_tours.json

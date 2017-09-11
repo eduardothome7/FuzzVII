@@ -1,5 +1,6 @@
 class PlanModsController < ApplicationController
   before_action :set_plan_mod, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /plan_mods
   # GET /plan_mods.json
