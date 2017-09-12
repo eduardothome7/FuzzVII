@@ -3,11 +3,13 @@ class StudiosController < ApplicationController
   layout :set_layout
   before_action :set_mod
   before_action :authenticate_user!
+  $mod_title = "Estúdios"
 
   # GET /studios
   # GET /studios.json
   def index
     @studios = Studio.all
+    @mod_title = $mod_title
   end
 
   # GET /studios/1
@@ -18,6 +20,7 @@ class StudiosController < ApplicationController
   # GET /studios/new
   def new
     @studio = Studio.new
+    @mod_title = "<a href='/studios'>#{$mod_title}</a> ><span>Incluir Estúdio</span>" 
   end
 
   def getByName

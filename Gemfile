@@ -19,7 +19,7 @@ gem 'momentjs-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'devise'
-gem 'bcrypt', platforms: :ruby
+# gem 'bcrypt', platforms: :ruby
 gem 'materialize-sass'
 gem 'modernizr-rails'
 gem 'wicked'

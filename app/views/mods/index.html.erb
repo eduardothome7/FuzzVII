@@ -1,12 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h4>Módulos do Sistema</h4>
-
-<% @mods.each do |mod|%>
-  <div class="row item"><div class="col m2">THUMB</div><div class="col m10">Nome<br>descrição</div><div class="col m1">action</div></div>
-<% end %>
-
-<!-- <a class="waves-effect waves-light blue btn modal-trigger" href="#modal1">Novo Módulo</a> -->
 <%= link_to "Novo Módulo", new_mod_path, class: 'waves-effect waves-light blue btn' %>
 
 <section class="list-itens">
