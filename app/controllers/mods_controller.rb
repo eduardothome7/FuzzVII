@@ -12,7 +12,7 @@ class ModsController < ApplicationController
 
     token = Digest::MD5.hexdigest('e1d2u3@@##')
 
-    redirect_to root_path if token != params[:Token]
+    redirect_to root_path if token != params[:token]
 
     @mods = Mod.all
     @mod  = Mod.new
