@@ -1,5 +1,5 @@
 class StudioStepsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   include Wicked::Wizard
   steps :location, :timetable, :contact, :picture, :finish

@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :users
-
-  get 'users/delete'
-
-  get 'users/destroy'
-
-  get 'users/update'
-
-  get 'users/show'
-
-  get 'users/authenticate'
-
   resources :mod_tours
   resources :events
   resources :calendars

@@ -49,7 +49,7 @@ ModTour.delete_all
 @mod_gastos 		= Mod.create(title: 'Gastos', category_mod_id: @proprietario.id, icon_id: @icon_toc.id,  slug: '')
 @mod_payments 		= Mod.create(title: 'Pagamentos', category_mod_id: @musico.id, icon_id: @icon_payment.id, slug: 'payments')
 @mod_rooms 			= Mod.create(title: 'Salas', category_mod_id: @proprietario.id, icon_id: @icon_room.id, slug: 'rooms')
-@mod_studios 		= Mod.create(title: 'Estúdios', category_mod_id: @proprietario.id, slug: 'studios', icon_id: @icon_room.id, bg_color: 'gradient-magenta', description: 'Cadastre e administre seu estúdio. Cadastre salas, equipamentos, funcionários e mantenha seu negócio de forma simples e iterativa! Clique no botão abaixo para saber mais!' )
+@mod_studios 		= Mod.create(title: 'Estúdios', category_mod_id: @proprietario.id, slug: 'studios', icon_id: @icon_room.id, bg_color: 'gradient-blue', description: 'Cadastre e administre seu estúdio. Cadastre salas, equipamentos, funcionários e mantenha seu negócio de forma simples e iterativa! Clique no botão abaixo para saber mais!' )
 @mod_calendar 		= Mod.create(title: 'Calendário', category_mod_id: @proprietario.id, icon_id: @icon_calendar.id, slug: 'calendars')
 @mod_events 		= Mod.create(title: 'Agenda', category_mod_id: @proprietario.id, icon_id: @icon_calendar.id, slug: 'events')
 @mod_payments 		= Mod.create(title: 'Pagamentos', category_mod_id: @proprietario.id, icon_id: @icon_payment.id, slug: 'payments')

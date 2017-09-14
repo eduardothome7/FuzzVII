@@ -1,0 +1,35 @@
+<h5>Horário de Funcionamento</h5>
+<%= form_for @studio, url: wizard_path, method: :put do |form| %>
+  <% if @studio.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@studio.errors.count, "error") %> erros ao cadastrar:</h5>
+      <ul>
+      <% @studio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= form.text_field :open_at, class: "timepicker" %>
+      <%= form.label "Abertura *" %>
+    </div>
+    <div class="input-field col s6">
+      <%= form.text_field :close_at, class: "timepicker" %>
+      <%= form.label "Fechamento (deixar em branco se for 24/24)" %>
+    </div>
+  </div>
+
+  <div class="row">
+   <div class="col m9">
+      <%= link_to 'Voltar', previous_wizard_path %>
+    </div>
+    <div class="col m2">
+      <%= form.submit "Salvar e próximo", class: 'btn blue waves-effects waves-light' %>
+    </div>
+  </div>
+
+
+<% end %>

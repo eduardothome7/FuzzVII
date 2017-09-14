@@ -1,3 +1,4 @@
+<h5>Foto de Exibição</h5>
 <%= form_with(model: studio, local: true, multipart: true) do |form| %>
   <% if studio.errors.any? %>
     <div id="error_explanation">
@@ -16,6 +17,15 @@
       <%= form.file_field :picture, id: :studio_picture %>
     </div>
     <input class="file-path validate" type="text"/>
+  </div>
+  
+  <div class="row">
+   <div class="col m9">
+      <%= link_to 'Voltar', edit_studio_path(@studio) %>
+    </div>
+    <div class="col m2">
+      <%= form.submit "Salvar e próximo", class: 'btn blue waves-effects waves-light' %>
+    </div>
   </div>
 
 <% end %>
