@@ -1,0 +1,28 @@
+  <nav class="translucid navbar-fixed">
+  	<div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<li><a href="sass.html">Como funciona</a></li>
+    	<li><a href="sass.html">Contas</a></li>
+    	<li><a href="badges.html">Termos de Uso</a></li>
+    	<% if user_signed_in? %>
+			  <%= render 'layouts/ul_user' %>
+  		<% else %>
+  		  <li><%= link_to "Registrar", new_user_registration_path, :class => 'navbar-link' %></li> 
+  		  <li><%= link_to "Entrar", new_user_session_path, :class => 'navbar-link' %> </li>
+  		<% end %>
+      </ul>
+  	</div>
+  </nav>
+  <ul class="side-nav" id="mobile-demo">
+    <li><a href="sass.html">Como funciona</a></li>
+    <li><a href="sass.html">Contas</a></li>
+    <li><a href="badges.html">Termos de Uso</a></li>
+    <% if user_signed_in? %>
+      <%= render 'layouts/ul_user' %>
+    <% else %>
+      <li><%= link_to "Registrar", new_user_registration_path, :class => 'navbar-link' %></li> 
+      <li><%= link_to "Entrar", new_user_session_path, :class => 'navbar-link' %> </li>
+    <% end %>
+  </ul>
