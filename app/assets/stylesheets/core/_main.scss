@@ -64,6 +64,18 @@ body {
 	    margin-left: 0 !important;
 	}
 
+	.btn-fixed-action {
+		width: 4pc !important;
+
+		span {
+			display: none;
+		}
+
+		i {
+		    margin-left: 15px;
+		}
+	}
+
 }
 
 @media screen and (min-width: 768px) {
@@ -186,12 +198,12 @@ nav ul li text {
 }
 
 .action-float {
-	position: absolute;
+	position: fixed;
 }
 
 .bottom-right {
-	bottom: 2pc;
-    right: 2pc;
+	bottom: 1pc;
+    right: 1pc;
 }
 
 .white {
