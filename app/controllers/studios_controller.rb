@@ -2,7 +2,7 @@ class StudiosController < ApplicationController
   before_action :set_studio, only: [:show, :edit, :update, :destroy]
   layout :set_layout
   before_action :set_mod
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   $mod_title = "Estúdios"
 
   # GET /studios

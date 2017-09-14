@@ -18,6 +18,12 @@
 //= require maskedinput  
 //= require_tree .
 
+function cleanCepForm() {
+  $("#studio_address").val("");
+  $("#studio_ngb").val("");
+  $("#studio_city").val("");
+  $("#studio_uf").val("");
+}
 
 $(document).ready(function(){
    	$(".button-collapse").sideNav();
@@ -57,6 +63,38 @@ $(document).ready(function(){
       autoclose: false, // automatic close timepicker
       ampmclickable: true, // make AM PM clickable
       aftershow: function(){} //Function for after opening timepicker
+    });
+
+    $('.cep').blur(function(){
+      var cep = $(this).val().replace(/\D/g, '');
+   
+      if(cep != "") { 
+        var validacep = /^[0-9]{8}$/;
+      
+        if(validacep.test(cep)) {
+          $("#studio_address").val("...");
+          $("#studio_ngb").val("...");
+          $("#studio_city").val("...");
+          $("#studio_uf").val("...");
+
+          $.getJSON("//viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+            if(!("erro" in dados)) {
+              $("#studio_address").val(dados.logradouro);
+              $("#studio_ngb").val(dados.bairro);
+              $("#studio_city").val(dados.localidade);
+              $("#studio_uf").val(dados.uf);
+            } else {
+              cleanCepForm();
+              alert("CEP não encontrado.");
+            }   
+          });
+
+        } else {
+        
+          cleanCepForm();
+      
+        }
+      }
     });
 
 });
