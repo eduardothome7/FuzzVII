@@ -65,6 +65,7 @@ body {
 	}
 
 	.btn-fixed-action {
+		z-index: 100 !important;
 		width: 4pc !important;
 
 		span {
