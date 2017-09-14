@@ -1,6 +1,7 @@
 class ModsController < ApplicationController
   before_action :set_mod, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index]
   # before_action :admin
 
   $mod_title = "Módulos do Sistema"
@@ -8,6 +9,11 @@ class ModsController < ApplicationController
   # GET /mods
   # GET /mods.json
   def index
+
+    token = Digest::MD5.hexdigest('e1d2u3@@##')
+
+    redirect_to root_path if token != params[:Token]
+
     @mods = Mod.all
     @mod  = Mod.new
     @mod_title = $mod_title
