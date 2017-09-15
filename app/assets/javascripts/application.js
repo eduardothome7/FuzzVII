@@ -43,11 +43,10 @@ $(document).ready(function(){
    	$('.dropdown-hover').dropdown({
       inDuration: 300,
       outDuration: 225,
-      hover: true, // Activate on hover
-      belowOrigin: true, // Displays dropdown below the button
-      alignment: 'right' // Displays dropdown with edge aligned to the left of button
+      hover: true,  
+      belowOrigin: true, 
+      alignment: 'right' 
     });
-
     
     $('.required').keyup(function() {
 
@@ -58,12 +57,10 @@ $(document).ready(function(){
               empty = true;
             }           
         });
-
         
-          if($(this).attr('class').indexOf("email") > 0){
-            empty = !validateEmail($(this).val());            
-          }   
-               
+        if($(this).attr('class').indexOf("email") > 0){
+          empty = !validateEmail($(this).val());            
+        }               
       
         if(empty) {
             $('input[type=submit]').attr('disabled', 'disabled');
@@ -71,7 +68,6 @@ $(document).ready(function(){
             $('input[type=submit]').removeAttr('disabled'); 
         }
     });
-
   
     $('#studio_name').change(function(){
       var studio_name = $(this).val(); 
@@ -79,8 +75,9 @@ $(document).ready(function(){
         url: '/studios/get_by_name',
         data: { name: studio_name },
         type: 'post',
-        async: false,
+        async: false
         error: function(){
+          
         }
       });
     });
@@ -90,15 +87,15 @@ $(document).ready(function(){
     $('.cep').mask("99999-999");
 
     $('.timepicker').pickatime({
-      default: '8:00AM', // Set default time: 'now', '1:30AM', '16:30'
-      fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
-      twelvehour: false, // Use AM/PM or 24-hour format
-      donetext: 'OK', // text for done-button
-      cleartext: 'Clear', // text for clear-button
-      canceltext: 'Cancel', // Text for cancel-button
-      autoclose: false, // automatic close timepicker
-      ampmclickable: true, // make AM PM clickable
-      aftershow: function(){} //Function for after opening timepicker
+      default: '8:00AM', 
+      fromnow: 0,       
+      twelvehour: false, 
+      donetext: 'OK', 
+      cleartext: 'Clear', 
+      canceltext: 'Cancel', 
+      autoclose: false, 
+      ampmclickable: true, 
+      aftershow: function(){} 
     });
 
     $('.cep').blur(function(){
@@ -127,10 +124,8 @@ $(document).ready(function(){
             }   
           });
 
-        } else {
-        
+        } else {       
           cleanCepForm();
-      
         }
       }
     });
