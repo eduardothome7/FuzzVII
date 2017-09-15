@@ -12,3 +12,9 @@
     width: 70%;
     margin-left: 1pc;
 }
+
+.required::after {
+	display: none;
+	content: 'Ok';
+	color: green;
+}

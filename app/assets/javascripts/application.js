@@ -52,27 +52,27 @@ $(document).ready(function(){
     $('.required').keyup(function() {
 
         var empty = false;
-        var error = false;
+
         $('.required').each(function() {
             if ($(this).val() == '') {
               empty = true;
-            } else if($(this).attr('class').indexOf('email') > 0) {
-              if(!validateEmail($(this).val())) {
-                error = true;
-              } else {
-                error = false;
-              }              
-            }
+            }           
         });
 
-        if (empty || error) {
+        
+          if($(this).attr('class').indexOf("email") > 0){
+            empty = !validateEmail($(this).val());            
+          }   
+               
+      
+        if(empty) {
             $('input[type=submit]').attr('disabled', 'disabled');
         } else {
             $('input[type=submit]').removeAttr('disabled'); 
         }
     });
 
-
+  
     $('#studio_name').change(function(){
       var studio_name = $(this).val(); 
       $.ajax({
