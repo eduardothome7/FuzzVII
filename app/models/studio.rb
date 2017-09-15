@@ -7,7 +7,6 @@ class Studio < ApplicationRecord
 
 	def self.search(search)
 	  search = "%#{search}%"
-
 	  where("name ILIKE ?", search)
 	end
 

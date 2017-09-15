@@ -25,6 +25,11 @@ function cleanCepForm() {
   $("#studio_uf").val("");
 }
 
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
 $(document).ready(function(){
    	$(".button-collapse").sideNav();
    	$('.dropdown-button').dropdown();
@@ -43,11 +48,40 @@ $(document).ready(function(){
       alignment: 'right' // Displays dropdown with edge aligned to the left of button
     });
 
+    
+    $('.required').keyup(function() {
+
+        var empty = false;
+        var error = false;
+        $('.required').each(function() {
+            if ($(this).val() == '') {
+              empty = true;
+            } else if($(this).attr('class').indexOf('email') > 0) {
+              if(!validateEmail($(this).val())) {
+                error = true;
+              } else {
+                error = false;
+              }              
+            }
+        });
+
+        if (empty || error) {
+            $('input[type=submit]').attr('disabled', 'disabled');
+        } else {
+            $('input[type=submit]').removeAttr('disabled'); 
+        }
+    });
+
+
     $('#studio_name').change(function(){
       var studio_name = $(this).val(); 
       $.ajax({
-         url: '/studios/getByName',
-         data: { name: studio_name }
+        url: '/studios/get_by_name',
+        data: { name: studio_name },
+        type: 'post',
+        async: false,
+        error: function(){
+        }
       });
     });
 

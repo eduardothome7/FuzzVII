@@ -23,8 +23,8 @@ class StudiosController < ApplicationController
     @mod_title = "<a href='/studios'>#{$mod_title}</a> ><span>Incluir Estúdio</span>" 
   end
 
-  def getByName
-    @studio = Studio.search(params[:name])
+  def get_by_name
+    # @studio = Studio.search(params[:name])
     respond_to do |format|
       format.js 
     end

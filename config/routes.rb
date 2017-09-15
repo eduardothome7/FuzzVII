@@ -13,9 +13,11 @@ Rails.application.routes.draw do
 
   get 'pages/plans'
 
-  resources :studios  
+  resources :studios 
 
-  post 'studios/getByName', :to => 'studios#getByName'
+  namespace :studios do 
+    post 'get_by_name'
+  end  
 
   get 'home/index'
 

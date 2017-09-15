@@ -12,17 +12,17 @@
 
   <div class="input-field">
     <%= form.label "Nome *" %>
-    <%= form.text_field :name, id: :studio_name %>
+    <%= form.text_field :name, id: :studio_name, class: 'required' %>
   </div>
 
   <div class="input-field">
     <%= form.label "CNPJ *" %>
-    <%= form.text_field :cnpj, id: :studio_cnpj, class: :cnpj %>
+    <%= form.text_field :cnpj, id: :studio_cnpj, class: 'cnpj required' %>
   </div> 
 
   <div class="input-field">
     <%= form.label "email *" %>
-    <%= form.email_field :email, id: :studio_email %>
+    <%= form.email_field :email, id: :studio_email, class: 'required email' %>
   </div>
 
   <div class="input-field">
@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col m2 offset-m9">
       <div class=" input-field">
-        <%= form.submit "Salvar e próximo", class: 'btn blue waves-effects waves-light' %>
+        <%= form.submit "Salvar e próximo", disabled:true, class: 'btn blue waves-effects waves-light' %>
       </div>
     </div>
   </div>
