@@ -33,6 +33,8 @@ $(document).ready(function(){
       
    	$('select').material_select();
 
+    Materialize.updateTextFields();
+
    	$('.dropdown-hover').dropdown({
       inDuration: 300,
       outDuration: 225,
@@ -72,6 +74,7 @@ $(document).ready(function(){
         var validacep = /^[0-9]{8}$/;
       
         if(validacep.test(cep)) {
+          $('#lbl-studio-address, #lbl-studio-ngb, #lbl-studio-city, #lbl-studio-uf').addClass("active");
           $("#studio_address").val("...");
           $("#studio_ngb").val("...");
           $("#studio_city").val("...");
@@ -79,6 +82,7 @@ $(document).ready(function(){
 
           $.getJSON("//viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
             if(!("erro" in dados)) {
+              $('#lbl-studio-address, #lbl-studio-ngb, #lbl-studio-city, #lbl-studio-uf').addClass("active");
               $("#studio_address").val(dados.logradouro);
               $("#studio_ngb").val(dados.bairro);
               $("#studio_city").val(dados.localidade);

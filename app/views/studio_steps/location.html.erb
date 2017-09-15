@@ -20,7 +20,7 @@
     </div>
   
     <div class="input-field col m8">
-      <%= form.label "logradouro" %>
+      <%= form.label "logradouro", id: 'lbl-studio-address' %>
       <%= form.text_field :address, id: :studio_address, disabled: :true %>
     </div>
 
@@ -33,17 +33,17 @@
   <div class="row">    
     
     <div class="input-field col m4">
-      <%= form.label "bairro" %>
+      <%= form.label "bairro", id: 'lbl-studio-ngb' %>
       <%= form.text_field :ngb, id: :studio_ngb, disabled: :true %>
     </div>
 
     <div class="input-field col m7">
-      <%= form.label "cidade" %>
+      <%= form.label "cidade", id: 'lbl-studio-city' %>
       <%= form.text_field :city, id: :studio_city, disabled: :true %>
     </div>
 
     <div class="input-field col m1">
-      <%= form.label "uf" %>
+      <%= form.label "uf", id: 'lbl-studio-uf' %>
       <%= form.text_field :uf, id: :studio_uf, disabled: :true %>
     </div>
   </div>
